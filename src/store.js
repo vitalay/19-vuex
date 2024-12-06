@@ -12,4 +12,15 @@ export default createStore({
             state.counter += payload.value;
         },
     },
+    getters: {
+        counter(state) {
+            if (state.counter > 50) {
+                return 0;
+            }
+            return state.counter;
+        },
+        doubleCounter(state, getters) {
+            return getters.counter * 2;
+        }
+    }
 });
