@@ -2,6 +2,7 @@
   
     <header class="header">
         <strong>Счетчик {{ counter }}</strong>
+        <button class="btn" @click="add">Добавить 5</button>
     </header>
 </template>
 
@@ -11,6 +12,11 @@ export default {
         counter() {
             return this.$store.state.counter
         }
+    },
+    methods: {
+       add() {
+           this.$store.commit('addFive', 5)
+       }  
     }
 
 }

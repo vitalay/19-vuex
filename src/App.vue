@@ -25,7 +25,7 @@ components: {
 
 methods: {
   increment() {
-    this.$store.state.counter++
+    this.$store.commit('increment');
   }
  }
 }
