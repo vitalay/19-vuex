@@ -14,15 +14,21 @@ export default createStore({
 
     },
     actions: {
-        incrementAsinc(context) {
+        incrementAsinc(commit, payload) {
             setTimeout(() => {
-                context.commit('add', {
-                    value: 10
-                });
+                commit.commit('add', payload);
             }, 2000);
         }
     },
     getters: {
+/*************  ✨ Codeium Command ⭐  *************/
+        /**
+         * Return the counter value.
+         * If the counter exceeds 50, return 0.
+         * @param {Object} state - The Vuex state.
+         * @returns {Number} The counter value, or 0 if it exceeds 50.
+         */
+/******  8274f12a-ec35-4a66-bdfd-c76277815afb  *******/
         counter(state) {
             // if (state.counter > 50) {
             //     return 0;

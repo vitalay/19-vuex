@@ -30,7 +30,10 @@ methods: {
     this.$store.commit('increment');
   },
   incrementAsinc() {
-    this.$store.dispatch('incrementAsinc');
+    this.$store.dispatch('incrementAsinc', {
+      value: 10
+    }) ;
+    
   },
  }
 }
