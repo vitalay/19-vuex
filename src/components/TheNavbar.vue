@@ -1,12 +1,17 @@
 <template>
   
     <header class="header">
-        VueX
+        <strong>Счетчик {{ counter }}</strong>
     </header>
 </template>
 
 <script>
 export default {
+    computed: {
+        counter() {
+            return this.$store.state.counter
+        }
+    }
 
 }
 </script>
