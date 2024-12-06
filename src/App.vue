@@ -7,7 +7,7 @@
     <h1>Vuex</h1>
     <h2>Счетчик {{ counter }} ({{ doubleCounter }})</h2>
     <button class="btn primary" @click="add"> Добавить </button>
-    <button class="btn danger" @click="incrementAsinc"> Добавить 10</button>
+    <button class="btn danger" @click="incrementAsinc({value: 10})"> Добавить 10</button>
 
     
   </div>
@@ -16,7 +16,7 @@
  
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations, mapActions} from 'vuex'
 import TheNavbar from './components/TheNavbar.vue'
 
 export default {
@@ -29,17 +29,19 @@ computed: {
 },
 
 methods: {
-  add() {
-    this.$store.commit('increment');
-  },
-  incrementAsinc() {
-    this.$store.dispatch('incrementAsinc', {
-      value: 10
-    }) ;
+   ...mapMutations({add: 'increment'}),
+  // add() {
+  //   this.$store.commit('increment');
+   ...mapActions(['incrementAsinc'])
+  // incrementAsinc() {
     
-  },
+  //   // this.$store.dispatch('incrementAsinc', {
+  //      value: 10
+  //   }) ;
+     
+  }
  }
-}
+
 </script> 
 
 
