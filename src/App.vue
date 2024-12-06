@@ -6,7 +6,9 @@
   <div class="card">
     <h1>Vuex</h1>
     <h2>Счетчик {{ $store.getters.counter }} ({{ $store.getters.counter }})</h2>
-    <button class="btn primary" @click="increment"> Добавить </button>
+    <button class="btn primary" @click="add"> Добавить </button>
+    <button class="btn danger" @click="incrementAsinc"> Добавить 10</button>
+
     
   </div>
   
@@ -24,9 +26,12 @@ components: {
 },
 
 methods: {
-  increment() {
+  add() {
     this.$store.commit('increment');
-  }
+  },
+  incrementAsinc() {
+    this.$store.dispatch('incrementAsinc');
+  },
  }
 }
 </script> 
