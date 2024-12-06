@@ -5,7 +5,7 @@
  <div class="container with-nav">
   <div class="card">
     <h1>Vuex</h1>
-    <h2>Счетчик {{ $store.getters.counter }} ({{ $store.getters.counter }})</h2>
+    <h2>Счетчик {{ counter }} ({{ doubleCounter }})</h2>
     <button class="btn primary" @click="add"> Добавить </button>
     <button class="btn danger" @click="incrementAsinc"> Добавить 10</button>
 
@@ -16,13 +16,16 @@
  
 </template>
 <script>
-
+import { mapGetters } from 'vuex'
 import TheNavbar from './components/TheNavbar.vue'
 
 export default {
   
 components: {
   TheNavbar
+},
+computed: {
+  ...mapGetters(['counter', 'doubleCounter'])
 },
 
 methods: {
