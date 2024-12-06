@@ -8,8 +8,8 @@ export default createStore({
         increment(state) {
             state.counter++;
         },
-        addFive(state) {
-            state.counter += 5;
+        add(state, payload) {
+            state.counter += payload.value;
         },
     },
 });

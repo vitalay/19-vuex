@@ -15,7 +15,9 @@ export default {
     },
     methods: {
        add() {
-           this.$store.commit('addFive', 5)
+           this.$store.commit('add', {
+               value: 5
+           })
        }  
     }
 
