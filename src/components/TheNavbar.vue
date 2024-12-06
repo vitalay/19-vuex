@@ -2,22 +2,28 @@
   
     <header class="header">
         <strong>Счетчик {{ counter }}</strong>
-        <button class="btn" @click="add">Добавить 5</button>
+        <button class="btn" @click="addFive">Добавить 5</button>
     </header>
 </template>
 
 <script>
+
+import { mapGetters, mapMutations } from 'vuex'
+
 export default {
     computed: {
-        counter() {
-            return this.$store.getters.counter
-        }
+        // counter() {
+        //     return this.$store.getters.counter
+        // },
+        ...mapGetters(['counter'])
     },
     methods: {
-       add() {
-           this.$store.commit('add', {
-               value: 5
-           })
+       ...mapMutations(['add']),
+       addFive() {
+        this.add({value: 5})
+        //    this.$store.commit('add', {
+        //        value: 5
+        //    })
        }  
     }
 
